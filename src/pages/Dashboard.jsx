@@ -9,7 +9,7 @@ const Dashboard = () => {
       <TopNavbar/>
     <div className=' flex  justify-evenly'>
       
-      <div className=" w-[30%] h-25 rounded-3xl bg-[#ffffff] flex justify-center items-center gap-3">
+      <div className=" w-[30%] h-25 rounded-3xl bg-[#ffffff] flex justify-center items-center gap-3 border-1 border-gray-200">
          <div className="h-15 w-15 bg-[#7c3aed] rounded-2xl  flex justify-center items-center ">
                 <Upload size={30}  color='white'/>
            </div>
@@ -19,7 +19,7 @@ const Dashboard = () => {
           </div>
       </div>
 
-      <div className=" w-[30%] h-25 rounded-3xl bg-[#ffffff] flex justify-center items-center gap-3">
+      <div className=" w-[30%] h-25 rounded-3xl bg-[#ffffff] flex justify-center items-center gap-3 border-1 border-gray-200">
           <div className="h-15 w-15 bg-[#7c3aed] rounded-2xl  flex justify-center items-center ">
               <Trophy size={30}  color='white'/>
           </div>
@@ -29,7 +29,7 @@ const Dashboard = () => {
           </div>
       </div>
 
-      <div className=" w-[30%] h-25 rounded-3xl bg-[#ffffff] flex justify-center items-center gap-3">
+      <div className=" w-[30%] h-25 rounded-3xl bg-[#ffffff] flex justify-center items-center gap-3 border-1 border-gray-200">
           <div className="h-15 w-15 bg-[#7c3aed] rounded-2xl  flex justify-center items-center ">
               <UserCheck size={30}  color='white'/>
           </div>
