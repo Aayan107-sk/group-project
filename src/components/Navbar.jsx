@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
          <div className="h-10 w-[90%] ml-2 rounded-2xl  flex  items-center gap-2 hover:bg-[#6c5ce7]  hover:text-white">
           <Settings className='ml-2' size={24}/>
-         <p className='text-xl pb-0.5'>Settings</p> 
+         <p className='text-xl pb-0.5'>Settinngs</p> 
         </div>
       </div>
          
