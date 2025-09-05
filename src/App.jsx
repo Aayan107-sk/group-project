@@ -7,9 +7,10 @@ import Dashboard from './pages/Dashboard';
 import Layout from './components/Layout';
 import ResumeList from './pages/ResumeList';
 import ResumesPage from './pages/ResumeList';
+import Shortlist from './pages/Shortlist';
 
 const App = () => {
-  const [login,setLogin]=useState(false);
+  const [login,setLogin]=useState(true);
   return (
     <div>
   {login?
@@ -17,10 +18,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/resumelist" element={<ResumesPage/>}/>
+        <Route path="/shortlist" element={<Shortlist/>}/>
       </Routes>
     </Layout>
     :
-     <Routes>
+      <Routes>
         <Route path="/login" element={<Login />} /> 
       </Routes>
     }

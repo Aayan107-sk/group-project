@@ -1,13 +1,35 @@
 import React from 'react';
 import { FaLock, FaEnvelope, FaArrowRight } from 'react-icons/fa';
 
+import { HelpCircle } from "lucide-react";
+import Logo from '../components/logo';
+
+
 
 const Login = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-50 to-indigo-100 flex items-center justify-center p-6">
-      <div className="max-w-6xl bg-white rounded-2xl shadow-lg flex flex-col md:flex-row items-center md:items-start gap-10 p-6 md:p-12">
+  <div className="flex flex-col ">
+    {/* topnavbar */}
+    <div className='top-0 fixed h-20 w-[100%]  flex justify-between items-center bg-[#f7f9fc] '>
+      <div className="text-[#0f1724]   pl-6 flex ">
+         <div className="h-12 w-12 mt-2 bg-[#6c5ce7] rounded-2xl  flex justify-center items-center">
+          <Logo color="white" size={30} />
+        </div>
+        <div className=" flex flex-col ml-8">
+        <h2 className='text-3xl font-medium'>AI Resume Analyzer </h2>
+        <p className='text-[#98A0b3]'>Smart Hiring with AI</p>
+        </div>
+        </div>
+      <div className='flex gap-2 text-[#98A0b3] mr-6'>
+       <p className='pt-1'> <HelpCircle size={20} /></p>
+        <p className=''>Help</p> 
+      </div>
+    </div>
+
+    <div className="h-screen bg-gradient-to-r from-indigo-50 to-indigo-100 flex items-center justify-center p-6 py-20 mt-10">
+      <div className="w-[75%] h-[90%] bg-white rounded-2xl shadow-lg flex flex-col md:flex-row items-center md:items-start gap-10 p-6 md:p-12">
         {/* Left Side: Login Form */}
-        <div className="bg-white rounded-2xl p-8 shadow-md w-full max-w-md">
+        <div className="bg-white rounded-2xl p-8 shadow-md w-full  ">
           {/* Logo & Title */}
           <div className="flex items-center gap-3 mb-8">
             <div className="bg-indigo-500 p-3 rounded-full">
@@ -56,11 +78,11 @@ const Login = () => {
         </div>
 
         {/* Right Side: Image */}
-        <div className="rounded-2xl shadow-lg overflow-hidden w-full max-w-lg flex justify-center">
+        <div className="rounded-2xl shadow-lg overflow-hidden w-full h-[95%] flex justify-center">
           <img 
-            src="group-project/public/Login.png" 
+            src="public/Login.png" 
             alt="Man reading" 
-            className="object-cover rounded-2xl max-h-[350px]"
+            className="object-cover rounded-2xl h-[100%]"
           />
         </div>
       </div>
@@ -69,6 +91,7 @@ const Login = () => {
       <div className="absolute bottom-5 w-full text-center text-gray-500 text-sm">
         Don't have an account? <a href="#" className="text-indigo-600 font-semibold hover:underline">Sign up</a>
       </div>
+    </div>
     </div>
   );
 };

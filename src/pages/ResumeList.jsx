@@ -95,10 +95,10 @@ const ResumesPage = () => {
                 {ResumeList.map(({ id, name, role, skills, experience, score }) => (
                     <div
                         key={id}
-                        className="grid grid-cols-[2.5fr_2fr_1fr_1fr_1.5fr] items-center gap-4 px-4 py-4 hover:bg-purple-50 rounded-lg"
+                        className="grid grid-cols-[2.5fr_2fr_1fr_1fr_1.5fr] items-center gap-4 px-4 py-4  border hover:border-[#7c3aed] rounded-3xl"
                     >
                         {/* Candidate Name and Avatar */}
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center space-x-3 ">
                             <img
                                 src={`https://i.pravatar.cc/40?img=${id + 30}`}
                                 alt={`${name} avatar`}
