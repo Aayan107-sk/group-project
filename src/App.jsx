@@ -5,9 +5,13 @@ import Login  from './pages/Login'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from './pages/Dashboard';
 import Layout from './components/Layout';
-import ResumeList from './pages/ResumeList';
-import ResumesPage from './pages/ResumeList';
 import Shortlist from './pages/Shortlist';
+
+
+
+import CandidateSearch from './pages/SearchCandidate';
+import CandidateResult from './pages/CandidateResult';
+
 
 const App = () => {
   const [login,setLogin]=useState(true);
@@ -17,8 +21,9 @@ const App = () => {
     <Layout>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/resumelist" element={<ResumesPage/>}/>
-        <Route path="/shortlist" element={<Shortlist/>}/>
+        <Route path="/shortlist" element={<Shortlist/>}/> 
+        <Route path="/candidateSearch" element={<CandidateSearch/>}/>
+        <Route path="/candidateResult" element={<CandidateResult/>}/>
       </Routes>
     </Layout>
     :

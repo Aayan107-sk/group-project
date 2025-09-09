@@ -22,19 +22,21 @@ const Navbar = () => {
           <LayoutDashboard className='ml-2 ' size={24}  />
          <p className='text-xl pb-0.5'>Dashboard</p> 
         </div>
+
          <div onClick={()=>navigate("/resumelist")}  className="h-10 w-[90%] ml-2 rounded-2xl flex  items-center gap-2 hover:bg-[#6c5ce7]  hover:text-white">
           <FileText className='ml-2' size={24} />
          <p className='text-xl pb-0.5'>Resumes</p> 
         </div>
-         <div className="h-10 w-[90%] ml-2 rounded-2xl  flex  items-center gap-2 hover:bg-[#6c5ce7]  hover:text-white">
-          <Search className='ml-2' size={24}  />
+        
+         <div onClick={()=>navigate("/resumesearch")} className="h-10 w-[90%] ml-2 rounded-2xl  flex  items-center gap-2 hover:bg-[#6c5ce7]  hover:text-white">
+          <Search  className='ml-2' size={24}  />
          <p className='text-xl pb-0.5'>Search</p> 
         </div>
          <div onClick={()=>navigate("/shortlist")} className="h-10 w-[90%] ml-2 rounded-2xl  flex  items-center gap-2 hover:bg-[#6c5ce7]  hover:text-white">
           <Star className='ml-2' size={24}  />
          <p className='text-xl pb-0.5'>Shortlist</p> 
         </div>
-         <div className="h-10 w-[90%] ml-2 rounded-2xl   flex  items-center gap-2 hover:bg-[#6c5ce7]  hover:text-white">
+         <div onClick={()=>navigate("/notificationspage")}  className="h-10 w-[90%] ml-2 rounded-2xl   flex  items-center gap-2 hover:bg-[#6c5ce7]  hover:text-white">
           <Bell className='ml-2' size={24} />
          <p className='text-xl pb-0.5'>Notifications</p> 
         </div>
