@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Login  from './pages/Login'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from './pages/Dashboard';
+
 import Layout from './components/Layout';
 import ResumesPage from './pages/ResumeList';
-import CandidateDetail from './pages/CandidatesPage';
-import ResumeSearch from './pages/ResumeSearch';
+
 import Notifications from './pages/NotificationsPage';
+import ResumeDetails from './pages/ResumeDetail';
+import UploadResumePage from './pages/UploadResumePage';
+import AdminSettings from './pages/AdminSettings';
 
 const App = () => {
   const [login,setLogin]=useState(true);
@@ -17,11 +19,15 @@ const App = () => {
   {login?
     <Layout>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        
         <Route path="/resumelist" element={<ResumesPage/>}/>
-        <Route path="/candidatedetail" element={<CandidateDetail/>}/>
-        <Route path="/resumesearch" element={<ResumeSearch/>}/>
+        
+        
         <Route path="/notificationspage" element={<Notifications/>}/>
+        <Route path="/resumedetails" element={<ResumeDetails/>}/>
+        <Route path="/adminsetting" element={<AdminSettings/>}/>
+        <Route path="/resumepage" element={<UploadResumePage/>}/>
+
       </Routes>
     </Layout>
     :

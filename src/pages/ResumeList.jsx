@@ -1,153 +1,173 @@
-import React from 'react';
+import React from "react";
 
+const resumes = [
+  {
+    id: 1,
+    name: "Ava Patel",
+    role: "Frontend Engineer",
+    avatar:
+      "https://randomuser.me/api/portraits/women/68.jpg",
+    skills: ["React", "TypeScript", "CSS"],
+    experience: "4 yrs",
+    aiScore: 96,
+  },
+  {
+    id: 2,
+    name: "Lucas Nguyen",
+    role: "Data Scientist",
+    avatar:
+      "https://randomuser.me/api/portraits/men/69.jpg",
+    skills: ["Python", "TensorFlow", "SQL"],
+    experience: "5 yrs",
+    aiScore: 93,
+  },
+  {
+    id: 3,
+    name: "Mia Rodriguez",
+    role: "Backend Engineer",
+    avatar:
+      "https://randomuser.me/api/portraits/men/70.jpg",
+    skills: ["Node.js", "PostgreSQL", "AWS"],
+    experience: "6 yrs",
+    aiScore: 91,
+  },
+  {
+    id: 4,
+    name: "Ethan Chen",
+    role: "ML Engineer",
+    avatar:
+      "https://randomuser.me/api/portraits/women/71.jpg",
+    skills: ["PyTorch", "MLOps", "Kubernetes"],
+    experience: "3 yrs",
+    aiScore: 88,
+  },
+  {
+    id: 5,
+    name: "Sofia Ahmed",
+    role: "Full-Stack Developer",
+    avatar:
+      "https://randomuser.me/api/portraits/women/72.jpg",
+    skills: ["Next.js", "Prisma", "GraphQL"],
+    experience: "7 yrs",
+    aiScore: 85,
+  },
+];
 
+export default function ResumePage() {
+  return (
+    <div className="flex flex-col p-8 space-y-6 bg-[#F9FAFB] min-h-screen">
+      {/* Title */}
+      <h1 className="text-2xl font-semibold text-gray-900">Resumes</h1>
 
-const ResumesPage = () => {
+      {/* Search & Filters */}
+      <section className="bg-white p-4 rounded-lg shadow-sm flex flex-wrap gap-4">
+        <label className="basis-full font-semibold text-gray-800">
+          Search & Filters
+        </label>
+        <input
+          type="search"
+          placeholder="Search by candidate or keyword"
+          className="flex-grow min-w-[220px] px-4 py-2 border border-gray-200 rounded-md text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <input
+          type="text"
+          placeholder="Filter by skills (e.g., React, Python)"
+          className="flex-grow min-w-[220px] px-4 py-2 border border-gray-200 rounded-md text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <input
+          type="number"
+          placeholder="AI score ≥ 80"
+          className="w-28 px-4 py-2 border border-gray-200 rounded-md text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          min={0}
+          max={100}
+        />
+        <input
+          type="text"
+          placeholder="Experience ≥ 3y"
+          className="w-28 px-4 py-2 border border-gray-200 rounded-md text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
 
-    const ResumeList = [
-        {
-            id: 1,
-            name: 'Ava Patel',
-            role: 'Frontend Engineer',
-            skills: ['React', 'TypeScript', 'CSS'],
-            experience: '4 yrs',
-            score: 96,
-        },
-        {
-            id: 2,
-            name: 'Lucas Nguyen',
-            role: 'Data Scientist',
-            skills: ['Python', 'TensorFlow', 'SQL'],
-            experience: '5 yrs',
-            score: 93,
-        },
-        {
-            id: 3,
-            name: 'Mia Rodriguez',
-            role: 'Backend Engineer',
-            skills: ['Node.js', 'PostgreSQL', 'AWS'],
-            experience: '6 yrs',
-            score: 91,
-        },
-        {
-            id: 4,
-            name: 'Ethan Chen',
-            role: 'ML Engineer',
-            skills: ['PyTorch', 'MLOps', 'Kubernetes'],
-            experience: '3 yrs',
-            score: 88,
-        },
-        {
-            id: 5,
-            name: 'Sofia Ahmed',
-            role: 'Full-Stack Developer',
-            skills: ['Next.js', 'Prisma', 'GraphQL'],
-            experience: '7 yrs',
-            score: 85,
-        },
-    ];
-
-    return (
-        <div className="p-6 bg-white rounded-lg shadow-md max-w-full">
-            
-
-            {/* Search & Filters */}
-            <div className="bg-gray-50 p-5 rounded-xl mb-8 flex flex-wrap gap-3">
-                <input
-                    type="text"
-                    placeholder="Search by candidate or keyword"
-                    className="flex-1 min-w-[180px] px-4 py-2 rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-900"
-                />
-                <input
-                    type="text"
-                    placeholder="Filter by skills (e.g., React, Python)"
-                    className="flex-1 min-w-[220px] px-4 py-2 rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <input
-                    type="text"
-                    placeholder="AI score ≥ 80"
-                    className="w-[130px] px-3 py-2 rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <input
-                    type="text"
-                    placeholder="Experience ≥ 3y"
-                    className="w-[130px] px-3 py-2 rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <button className="bg-gray-200 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-300">Clear</button>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">Apply Filters</button>
-            </div>
-
-            {/* Resume List */}
-            <div className="bg-white rounded-xl p-6 shadow-md">
-                <h2 className="font-semibold text-lg mb-2 text-gray-900">Resume List</h2>
-                <p className="text-gray-400 text-sm mb-6">Searchable, filterable table of candidates</p>
-
-                {/* Table Header */}
-                <div className="grid grid-cols-[2.5fr_2fr_1fr_1fr_1.5fr] gap-4 px-4 py-2 text-gray-500 font-semibold border-b border-gray-200">
-                    <div>Candidate Name</div>
-                    <div>Skills</div>
-                    <div>Experience</div>
-                    <div>AI Ranking Score</div>
-                    <div>Actions</div>
-                </div>
-
-                {/* Table Rows */}
-                {ResumeList.map(({ id, name, role, skills, experience, score }) => (
-                    <div
-                        key={id}
-                        className="grid grid-cols-[2.5fr_2fr_1fr_1fr_1.5fr] items-center gap-4 px-4 py-4 hover:bg-purple-50 rounded-lg"
-                    >
-                        {/* Candidate Name and Avatar */}
-                        <div className="flex items-center space-x-3">
-                            <img
-                                src={`https://i.pravatar.cc/40?img=${id + 30}`}
-                                alt={`${name} avatar`}
-                                className="w-10 h-10 rounded-full"
-                            />
-                            <div>
-                                <span className="font-semibold text-gray-800">{name}</span>
-                                <br />
-                                <span className="text-gray-400 text-sm">{role}</span>
-                            </div>
-                        </div>
-
-                        {/* Skills */}
-                        <div className="flex gap-2">
-                            {skills.map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium"
-                                >
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-
-                        {/* Experience */}
-                        <div className="font-semibold text-gray-800">{experience}</div>
-
-                        {/* AI Ranking Score */}
-                        <div>
-                            <span className="bg-purple-600 text-white rounded-full px-3 py-1 text-sm font-semibold">
-                                {score}
-                            </span>
-                        </div>
-
-                        {/* Actions */}
-                        <div className="flex gap-2">
-                            <button className="bg-gray-100 px-4 py-1 rounded-full font-semibold text-gray-600 hover:bg-gray-200">
-                                View
-                            </button>
-                            <button className="bg-purple-600 text-white px-4 py-1 rounded-full font-semibold hover:bg-purple-700">
-                                Shortlist
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </div>
+        <div className="flex items-center space-x-2 ml-auto">
+          <button className="px-3 py-1 rounded-md text-gray-600 bg-gray-200 hover:bg-gray-300">
+            Clear
+          </button>
+          <button className="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700">
+            Apply Filters
+          </button>
         </div>
-    );
-};
+      </section>
 
-export default ResumesPage;
+      {/* Resume List */}
+      <section className="bg-white p-4 rounded-lg shadow-sm flex flex-col space-y-4">
+        <h2 className="font-semibold text-gray-900 mb-2">Resume List</h2>
+        <p className="text-gray-400 text-sm mb-4">
+          Searchable, filterable table of candidates
+        </p>
 
+        {/* Table Header */}
+        <div className="flex text-gray-500 text-sm font-semibold border-b border-gray-200 pb-2 px-2">
+          <div className="flex-1">Candidate Name</div>
+          <div className="flex-[2]">Skills</div>
+          <div className="w-16 text-center">Experience</div>
+          <div className="w-24 text-center">AI Ranking Score</div>
+          <div className="w-36 text-center">Actions</div>
+        </div>
+
+        {/* List Items */}
+        {resumes.map((r) => (
+          <div
+            key={r.id}
+            className="flex items-center bg-[#F8FAFC] rounded-2xl hover:shadow-lg hover:bg-white transition-shadow px-2 py-3 space-x-4"
+          >
+            {/* Candidate Info */}
+            <div className="flex-1 flex items-center space-x-3">
+              <img
+                src={r.avatar}
+                alt={r.name}
+                className="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p className="font-semibold text-gray-900">{r.name}</p>
+                <p className="text-sm text-gray-400">{r.role}</p>
+              </div>
+            </div>
+
+            {/* Skills */}
+            <div className="flex-[2] flex space-x-2">
+              {r.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="bg-indigo-100 text-indigo-600 text-xs font-semibold px-2 py-1 rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* Experience */}
+            <div className="w-16 text-center text-gray-900 font-medium">
+              {r.experience}
+            </div>
+
+            {/* AI Ranking Score */}
+            <div className="w-24 text-center">
+              <span className="bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                {r.aiScore}
+              </span>
+            </div>
+
+            {/* Actions */}
+            <div className="w-36 flex justify-center items-center space-x-4">
+              <button className="text-indigo-700 font-medium hover:underline">
+                View
+              </button>
+              <button className="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm hover:bg-indigo-700">
+                Shortlist
+              </button>
+            </div>
+          </div>
+        ))}
+      </section>
+    </div>
+  );
+}
